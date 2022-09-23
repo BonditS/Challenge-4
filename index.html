@@ -4,14 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code Quiz</title>
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-    <div>
-        <div>
-            
+    <!-- outer div -->
+    
+    <div class = "outer-div">
+
+        <!-- creating top bar -->
+        <!--using a tag to bring to another page-->
+        <div class = "top-bar">
+            <a>View highScore</a>
+            <p>Timer: 00</p>
+            <!--inner div-->
         </div>
+
+            <div class = inner-div>
+
+                <!--Phase 1-->
+                <!--header/quiz intro-->
+                <header class = "intro-paragraph">
+                    <h1>Coding Quiz Challenge</h1>
+                    <p>
+                        Try to anser the following code-related questions within the time limit.
+                        Keep in mind that incorrect answers will penalize your score/time by ten
+                        seconds.
+                    </p>
+                    <button>Start Quiz</button>
+
+                </header>
+
+                <!--Phase 2-->
+                <!--main quiz content-->
+                <main>
+                    <section class="question-screens">
+                        <h2>Question</h2>
+                        <ul>
+                            <li>A</li>
+                            <li>B</li>
+                            <li>C</li>
+                            <li>D</li>
+                        </ul>
+                    </section>
+
+                    <section class="All-done!">
+                        <h2>All done!</h2>
+                        <p>Your final score is 00.</p>
+                            <div>
+                                <label for="">Enter Initial:</label>
+                                <input type="text">
+                                <button>Submit</button>
+                            </div>
+                    </section>
+
+                    <section class="highscore">
+                    </section>
+
+                </main>
+
+            </div>
+        
+        
+
     </div>
+    <!-- <script src=""></script> -->
 </body>
 </html>
