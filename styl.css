@@ -15,23 +15,31 @@ body {
 }
 
 p {
-    color: white;
     font-size: 1.3em;
+}
+
+ul li {
+    list-style-type: none;
+    
 }
 
 button {
     outline: none;
-    background-color: rgb(11, 10, 10);
     font-size: 1.3em;
+    background-color: rgb(58, 23, 162);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 25%;    
 }
 
-h1, h2{
+h1, h2 {
     color: red;
     text-align: center;
 }
 /*outer container section*/
 /*use flexbox to eliminate workflow issue*/
-.outer-div {
+.outer-container {
     padding: 10px;
     height: 100vh;
     display: flex;
@@ -47,20 +55,23 @@ h1, h2{
 
 /* inner div section */
 
-.inner-div {
-    background: black;
+.inner-container {
+    
     height: 100%;
     width: 50%;
     margin: 0 auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:center; 
+    background: rgb(80, 78, 78);
+    box-shadow: 0 0 10px 2px;
+    border-radius: 5px;
+    
 }
 
 /*quiz header*/
 .intro-paragraph main{
-    display:none;
     margin-bottom: 30vh;
     margin-left: 10%;
     margin-right: 10%;
@@ -69,11 +80,31 @@ h1, h2{
 }
 
 .intro-paragraph p {
-    display: block;
     text-align: center;
+    margin-top: 20px;
 }
 
 .intro-paragraph button {
     margin: 0 auto;
+    margin-top: 20px;
+    padding: 5px;
+    display: block;
+    border-radius: 6px;
+    cursor: pointer;
 }
 /*main quiz content*/
+
+.btn-grid {
+    display: flex;
+    flex-direction: column;
+    padding:5px;
+    margin-top: 10px;
+}
+
+
+/*Submit initial section*/
+
+
+.hide {
+    display: none;
+}

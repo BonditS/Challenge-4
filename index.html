@@ -10,56 +10,73 @@
 <body>
     <!-- outer div -->
     
-    <div class = "outer-div">
+    <div class = "outer-container">
 
         <!-- creating top bar -->
         <!--using a tag to bring to another page-->
-        <div class = "top-bar">
-            <a>View highScore</a>
+        <div id = "top-bar" class = "top-bar">
+            <a id="high-score">View highScore</a>
             <p>Timer: 00</p>
             <!--inner div-->
         </div>
 
-            <div class = inner-div>
+            <div class = inner-container>
 
                 <!--Phase 1-->
                 <!--header/quiz intro-->
-                <header class = "intro-paragraph">
+                <header id = "intro-paragraph" class = "intro-paragraph">
                     <h1>Coding Quiz Challenge</h1>
                     <p>
                         Try to anser the following code-related questions within the time limit.
                         Keep in mind that incorrect answers will penalize your score/time by ten
                         seconds.
                     </p>
-                    <button>Start Quiz</button>
+                    <button id = "start-quiz">Start Quiz</button>
 
                 </header>
 
                 <!--Phase 2-->
                 <!--main quiz content-->
                 <main>
-                    <section class="question-screens">
-                        <h2>Question</h2>
-                        <ul>
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-                            <li>D</li>
-                        </ul>
-                    </section>
+                    <div id="question-screens" class="hide">
 
-                    <section class="All-done!">
+                        <h2 id = "question">Question</h2>
+                        
+                            <div id="user-choice" class="btn-grid">
+
+                                <button>Choice1</button>
+                                <button>Choice1</button>
+                                <button>Choice3</button>
+                                <button>Choice4</button>
+
+                            </div>
+
+                    </div>
+
+                    <div class="All-done hide">
+
                         <h2>All done!</h2>
-                        <p>Your final score is 00.</p>
+
+                        <p>Your final score is <span id="user-score">00</span>.</p>
                             <div>
                                 <label for="">Enter Initial:</label>
-                                <input type="text">
-                                <button>Submit</button>
+                                <input type="text" id="user-initial">
+                                <button id="Submit">Submit</button>
                             </div>
-                    </section>
+                    </div>
 
-                    <section class="highscore">
-                    </section>
+                    <div class="highscore hide">
+
+                        <h2>High Score</h2>
+
+                        <ul>
+                            <li>Person1 <span>00</span></li>
+                        </ul>
+
+                        <button>Go Back</button>
+                        <button>clear highscore</button>
+
+                    </div>
 
                 </main>
 
@@ -69,5 +86,6 @@
 
     </div>
     <!-- <script src=""></script> -->
+    <script src="script.js"></script>
 </body>
 </html>
