@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- outer div -->
     
@@ -16,18 +17,18 @@
         <!--using a tag to bring to another page-->
         <div id = "top-bar" class = "top-bar">
             <a id="high-score">View highScore</a>
-            <p>Timer: 00</p>
+            <p>Timer: <span id="time"></span></p>
             <!--inner div-->
         </div>
 
-            <div class = inner-container>
+            <div class = 'inner-container'>
 
                 <!--Phase 1-->
                 <!--header/quiz intro-->
                 <header id = "intro-paragraph" class = "intro-paragraph">
-                    <h1>Coding Quiz Challenge</h1>
+                    <h1 >Coding Quiz Challenge</h1>
                     <p>
-                        Try to anser the following code-related questions within the time limit.
+                        Try to anser the following code-related questions within the time limit. <br><br>
                         Keep in mind that incorrect answers will penalize your score/time by ten
                         seconds.
                     </p>
@@ -38,43 +39,43 @@
                 <!--Phase 2-->
                 <!--main quiz content-->
                 <main>
-                    <div id="question-screens" class="hide">
+                    <div id="question-screens">
 
                         <h2 id = "question">Question</h2>
                         
                             <div id="user-choice" class="btn-grid">
 
-                                <button>Choice1</button>
-                                <button>Choice1</button>
-                                <button>Choice3</button>
-                                <button>Choice4</button>
+                                <button id="choice0"></button>
+                                <button id="choice1"></button>
+                                <button id="choice2"></button>
+                                <button id="choice3"></button>
 
                             </div>
 
                     </div>
 
-                    <div class="All-done hide">
+                    <div class="All-done" id="All-done">
 
                         <h2>All done!</h2>
 
-                        <p>Your final score is <span id="user-score">00</span>.</p>
+                        <p>Your final score is <span id="user-score"></span>.</p>
                             <div>
                                 <label for="">Enter Initial:</label>
                                 <input type="text" id="user-initial">
-                                <button id="Submit">Submit</button>
+                                <button id="submit">Submit</button>
                             </div>
                     </div>
 
-                    <div class="highscore hide">
+                    <div class="highscore" id="highscore">
 
                         <h2>High Score</h2>
 
                         <ul>
-                            <li>Person1 <span>00</span></li>
+                            <li>Person1 <span id="finalScore">00</span></li>
                         </ul>
 
-                        <button>Go Back</button>
-                        <button>clear highscore</button>
+                        <button id="go-back">Go Back</button>
+                        <button id="clear-score">clear highscore</button>
 
                     </div>
 
