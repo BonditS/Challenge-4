@@ -112,8 +112,8 @@ function displayQuestion(){
     // let the variables be assigned with the value from the array of objects.
     // let questionScreen = document.querySelector('#');
     let question = quizObject[currentQuestion];
-    let h2QuestionElement = document.querySelector("#question");
-    h2QuestionElement.textContent = question.questionText;
+    let questionEl = document.querySelector("#question");
+    questionEl.textContent = question.questionText;
 
     let answerChoice = quizObject[currentOption];
     let 
