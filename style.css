@@ -24,13 +24,14 @@ ul li {
 }
 
 button {
-    outline: none;
-    font-size: 1.3em;
-    background-color: rgb(58, 23, 162);
-    border-radius: 10px;
-    cursor: pointer;
+    display: block;
+    color: #ffffff;
+    background-color: #1a4aac;
     margin-top: 5px;
-    width: 25%;    
+    padding: 2vh;
+    border-radius: 8px;
+    border: none; 
+
 }
 
 h1, h2 {
@@ -95,16 +96,16 @@ h1, h2 {
 /*main quiz content*/
 
 .btn-grid {
-    display: flex;
-    flex-direction: column;
-    padding:5px;
-    margin-top: 10px;
+
+        width: 100%;
+        text-align: left;
+        
 }
 
 
 /*Submit initial section*/
 
 
-.hide {
+/* .hide {
     display: none;
-}
+} */

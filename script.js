@@ -1,10 +1,10 @@
 // Set global variable. things that will change through the program. 
 let countDown;
 let time;
-let currentQuestion = 0;
+let currentQuestion;
 
 // Setting questions in array of objects
-const questions = [
+let quizObject = [
  {   
     questionText: 'Which of the following type of variable is visible only within a function where it is defined?',
     options: ['A. Global Variable', 'B. Local variable', 'C. Both of the above.', 'D. None of the above.'],  
@@ -49,35 +49,38 @@ const questions = [
 
 //Targeting containers by id to hide the content
 const startPage = document.querySelector('#intro-paragraph');
-const questionPage = document.querySelector('#question-screen');
+const questionPage = document.querySelector('#question-screens');
 const scorePage = document.querySelector('#All-done');
 const highscorePage = document.querySelector('#highscore');
 
+
 //function that hide all pages
-function hidePages(){
-startPage.setAttribute('class', 'hide');
-questionPage.setAttribute('class', 'hide');
-scorePage.setAttribute('class', 'hide');
-highscorePage.setAttribute('class', 'hide');
-}
-
-
-//Event listener to start quiz
-document.querySelector('#start-quiz').addEventListener('click', startQuiz());
+function hidePages() {  
+    questionPage.setAttribute('hidden', true)
+    scorePage.setAttribute('hidden', true)
+    highscorePage.setAttribute('hidden', true)
+};
+// hide pages
+    hidePages()
+document.getElementById("start-quiz")
+        .addEventListener("click", () => {
+  startPage.hidden = true;
+  questionPage.hidden = false;
+  scorePage.hidden = true;
+  highscorePage.hidden = true;
+  startQuiz();
+}, false);
 
 //Start Quiz function
 function startQuiz(){
-    //first call hidePages function to hide all page but only change class on questionPage 
-    //then assign 0 to currentPage to start countdown
-    hidePages();
-    questionPage.removeAttribute('class');
 
-    // call function display question
+    // call function display question and start currentQuestion at index 0
+    currentQuestion = 0;
+    currentOption = 0
     displayQuestion();
 
-    //start time when click
-    time= 75;
-
+    time = 9;
+    
     //start countdonw funtion. decrement by 1 second
     countDown = setInterval(decreTime, 1000);
 
@@ -90,7 +93,7 @@ function decreTime(){
     time--;
     displayTime();
     if (time < 1) {
-        stopQuiz();
+        stopQuiz() ;
     }
 
 };
@@ -107,27 +110,25 @@ function displayTime(){
 function displayQuestion(){
     // target question-screens id
     // let the variables be assigned with the value from the array of objects.
-    let questionScreen = document.querySelector('#');
-    let question = questions[currentQuestion];
-    let options = question.options;
+    // let questionScreen = document.querySelector('#');
+    let question = quizObject[currentQuestion];
+    let h2QuestionElement = document.querySelector("#question");
+    h2QuestionElement.textContent = question.questionText;
 
-    // loop through question choice when displayQuestion
+    let answerChoice = quizObject[currentOption];
+    let 
 
-    for (let i = 0; i < options.lenth; i++) {
-        let choice = options[i];
-        let choiceBtn = document.querySelector('#choice' + i);
-        choiceBtn.textContent = choice;
 
-    }
+    
 };
     
 // When I clck the choice button: i want it to check for answer, calculate the time if incorect then move to next question
 // check for answer function
 // first target event listener from user-choce id. target only the button that was clicked on
-let clickEvent = document.querySelector('#user-choice');
-clickEvent.addEventListener('click', checkAnswer);
+// let clickEvent = document.querySelector('#user-choice');
+// clickEvent.addEventListener('click', checkAnswer);
 
-// create function taht compare click choice with answer from question array
+// create function that compare click choice with answer from question array
 
 
 // check the ansnwer and calculate time
