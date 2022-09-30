@@ -132,19 +132,43 @@ function displayQuestion(){
     let clickEvent = document.querySelector('#user-choice');
     clickEvent.addEventListener('click', checkAnswer);
 
-    function optionIsCorrect(clickEvent) {
-        return clickEvent.textContent === questions[currentQuestion].answer;
+    function correctChoice (clickEvent) {
+        return clickEvent.textContent === quizObject[currentQuestion].answer;
       }
+
+// function to check answer
+    function checkAnswer (event){
+        let userChoice = event.target;
+    
+    if (correctChoice(userChoice)){
+        // textContent Correct
+
+    } else {
+        // textConten Incorrect
+
+        // Conditiona to calculate time
+        if (time > 0) {
+            time = time - 2; 
+            displayTime ()
+        } else {
+            time = 0;
+            displayTime();
+            stopQuiz();
+        }
+    }
+
+// Start a new question
+    currentQuestion++;
+    if (currentQuestion < question.length) {
+        displayQuestion();
+
+    } else {
+        stopQuiz();
+
+    }
+
+    }
       
-
-// create function that compare click choice with answer from question array
-
-
-// check the ansnwer and calculate time
-
-
-// increment question. display question if currentQuestion <question.lenth else stopQuiz
-
 
 //  stopQuiz function. endInterval(countDown) then hidequestion 
 
