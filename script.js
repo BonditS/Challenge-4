@@ -2,6 +2,7 @@
 let countDown;
 let time;
 let currentQuestion;
+let currentOption;
 
 // Setting questions in array of objects
 let quizObject = [
@@ -13,7 +14,7 @@ let quizObject = [
 },
 {
     questionText: 'Which of the following function of String object extracts a section of a string and returns a new string?',
-    otions: ['A. slice()', 'B. split()', 'C. replace()', 'D. search()'],
+    options: ['A. slice()', 'B. split()', 'C. replace()', 'D. search()'],
     answer: 'A. slice()',        
         
 },
@@ -115,18 +116,26 @@ function displayQuestion(){
     let questionEl = document.querySelector("#question");
     questionEl.textContent = question.questionText;
 
-    let answerChoice = quizObject[currentOption];
-    let 
+    let userChoice = document.querySelector('#user-choice');
 
+    for (var i = 0; i < question.options.length; i++) {
+        let btn = document.createElement('button');
+        btn.textContent = question.options[i];
+        userChoice.appendChild(btn);
+    }
 
-    
 };
     
 // When I clck the choice button: i want it to check for answer, calculate the time if incorect then move to next question
 // check for answer function
 // first target event listener from user-choce id. target only the button that was clicked on
-// let clickEvent = document.querySelector('#user-choice');
-// clickEvent.addEventListener('click', checkAnswer);
+    let clickEvent = document.querySelector('#user-choice');
+    clickEvent.addEventListener('click', checkAnswer);
+
+    function optionIsCorrect(clickEvent) {
+        return clickEvent.textContent === questions[currentQuestion].answer;
+      }
+      
 
 // create function that compare click choice with answer from question array
 
